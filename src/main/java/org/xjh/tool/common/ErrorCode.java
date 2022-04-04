@@ -1,4 +1,4 @@
-package org.xjh.tool.code;
+package org.xjh.tool.common;
 
 public interface ErrorCode {
     public String E_OK = "E_OK";

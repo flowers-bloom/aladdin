@@ -1,6 +1,6 @@
 package org.xjh.tool.dto;
 
-import org.xjh.tool.code.ErrorCode;
+import org.xjh.tool.common.ErrorCode;
 
 public class ResultDTO<T> extends BaseDTO {
     private String code;

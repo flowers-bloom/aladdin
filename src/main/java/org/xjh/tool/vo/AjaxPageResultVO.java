@@ -1,6 +1,6 @@
 package org.xjh.tool.vo;
 
-import org.xjh.tool.code.ErrorCode;
+import org.xjh.tool.common.ErrorCode;
 
 import java.util.List;
 

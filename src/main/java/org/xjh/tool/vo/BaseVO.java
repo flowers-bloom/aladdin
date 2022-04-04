@@ -2,7 +2,11 @@ package org.xjh.tool.vo;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class BaseVO {
+import java.io.Serializable;
+
+public class BaseVO implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Override
     public String toString() {

@@ -1,7 +1,7 @@
 package org.xjh.tool.vo;
 
 
-import org.xjh.tool.code.ErrorCode;
+import org.xjh.tool.common.ErrorCode;
 
 public class AjaxResultVO<T> extends BaseVO {
     private String code;
