@@ -7,7 +7,7 @@ public class AjaxResultVO<T> extends BaseVO {
     private String code;
     private Boolean success;
     private String errMsg;
-    private T data;
+    private T result;
 
     /**
      * 获取成功的返回结果
@@ -19,7 +19,7 @@ public class AjaxResultVO<T> extends BaseVO {
         AjaxResultVO<T> resultVO = new AjaxResultVO<>();
         resultVO.success = true;
         resultVO.code = ErrorCode.E_OK;
-        resultVO.data = data;
+        resultVO.result = data;
         return resultVO;
     }
 
@@ -61,11 +61,11 @@ public class AjaxResultVO<T> extends BaseVO {
         this.errMsg = errMsg;
     }
 
-    public T getData() {
-        return data;
+    public T getResult() {
+        return result;
     }
 
-    public void setData(T data) {
-        this.data = data;
+    public void setResult(T result) {
+        this.result = result;
     }
 }

@@ -6,7 +6,7 @@ public class ResultDTO<T> extends BaseDTO {
     private String code;
     private Boolean success;
     private String errMsg;
-    private T data;
+    private T result;
 
     /**
      * 获取成功的返回结果
@@ -18,7 +18,7 @@ public class ResultDTO<T> extends BaseDTO {
         ResultDTO<T> resultDTO = new ResultDTO<>();
         resultDTO.success = true;
         resultDTO.code = ErrorCode.E_OK;
-        resultDTO.data = data;
+        resultDTO.result = data;
         return resultDTO;
     }
 
@@ -60,11 +60,11 @@ public class ResultDTO<T> extends BaseDTO {
         this.errMsg = errMsg;
     }
 
-    public T getData() {
-        return data;
+    public T getResult() {
+        return result;
     }
 
-    public void setData(T data) {
-        this.data = data;
+    public void setResult(T result) {
+        this.result = result;
     }
 }
