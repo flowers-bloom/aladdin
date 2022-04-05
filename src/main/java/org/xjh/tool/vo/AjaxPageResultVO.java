@@ -1,11 +1,8 @@
 package org.xjh.tool.vo;
 
-import org.xjh.tool.common.ErrorCode;
-
 import java.util.List;
 
 public class AjaxPageResultVO<T> extends PageVO {
-    private String code;
     private Boolean success;
     private String errMsg;
     private Integer total;
@@ -20,31 +17,20 @@ public class AjaxPageResultVO<T> extends PageVO {
     public static <T> AjaxPageResultVO<T> getSuccessPageResult(List<T> pageResult) {
         AjaxPageResultVO<T> pageResultVO = new AjaxPageResultVO<>();
         pageResultVO.success = true;
-        pageResultVO.code = ErrorCode.E_OK;
         pageResultVO.pageResult = pageResult;
         return pageResultVO;
     }
 
     /**
      * 获取失败的分页结果
-     * @param code
      * @param errMsg
      * @return
      */
-    public static AjaxPageResultVO getFailurePageResult(String code, String errMsg) {
+    public static AjaxPageResultVO getFailurePageResult(String errMsg) {
         AjaxPageResultVO pageResultVO = new AjaxPageResultVO<>();
         pageResultVO.success = false;
-        pageResultVO.code = code;
         pageResultVO.errMsg = errMsg;
         return pageResultVO;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public Boolean isSuccess() {

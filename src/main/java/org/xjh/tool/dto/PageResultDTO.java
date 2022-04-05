@@ -1,11 +1,8 @@
 package org.xjh.tool.dto;
 
-import org.xjh.tool.common.ErrorCode;
-
 import java.util.List;
 
 public class PageResultDTO<T> extends PageDTO {
-    private String code;
     private Boolean success;
     private String errMsg;
     private Integer total;
@@ -20,31 +17,20 @@ public class PageResultDTO<T> extends PageDTO {
     public static <T> PageResultDTO<T> getSuccessPageResult(List<T> pageResult) {
         PageResultDTO<T> pageResultDTO = new PageResultDTO<>();
         pageResultDTO.success = true;
-        pageResultDTO.code = ErrorCode.E_OK;
         pageResultDTO.pageResult = pageResult;
         return pageResultDTO;
     }
 
     /**
      * 获取失败的分页结果
-     * @param code
      * @param errMsg
      * @return
      */
-    public static PageResultDTO getFailurePageResult(String code, String errMsg) {
+    public static PageResultDTO getFailurePageResult(String errMsg) {
         PageResultDTO pageResultDTO = new PageResultDTO<>();
         pageResultDTO.success = false;
-        pageResultDTO.code = code;
         pageResultDTO.errMsg = errMsg;
         return pageResultDTO;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public Boolean isSuccess() {

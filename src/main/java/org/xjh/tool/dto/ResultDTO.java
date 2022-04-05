@@ -1,9 +1,6 @@
 package org.xjh.tool.dto;
 
-import org.xjh.tool.common.ErrorCode;
-
 public class ResultDTO<T> extends BaseDTO {
-    private String code;
     private Boolean success;
     private String errMsg;
     private T result;
@@ -17,31 +14,20 @@ public class ResultDTO<T> extends BaseDTO {
     public static <T> ResultDTO<T> getSuccessResult(T data) {
         ResultDTO<T> resultDTO = new ResultDTO<>();
         resultDTO.success = true;
-        resultDTO.code = ErrorCode.E_OK;
         resultDTO.result = data;
         return resultDTO;
     }
 
     /**
      * 获取失败的返回结果
-     * @param code
      * @param errMsg
      * @return
      */
-    public static ResultDTO getFailureResult(String code, String errMsg) {
+    public static ResultDTO getFailureResult(String errMsg) {
         ResultDTO resultDTO = new ResultDTO<>();
         resultDTO.success = false;
-        resultDTO.code = code;
         resultDTO.errMsg = errMsg;
         return resultDTO;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public Boolean isSuccess() {
